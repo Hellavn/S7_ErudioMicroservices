@@ -14,7 +14,7 @@ namespace GeekShopping.Web.Services
             _client = client ?? throw new ArgumentNullException(nameof (client));
         }
 
-        public async Task<IEnumerable<ProductModel>> FindAllProducts()
+        public async Task<IEnumerable<ProductModel>> FindProductById()
         {
             var response = await _client.GetAsync(BasePath);
             return await response.ReadContentAs<List<ProductModel>>();
